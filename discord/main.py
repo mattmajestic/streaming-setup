@@ -54,5 +54,13 @@ async def redirect_to_docs():
     response = RedirectResponse(url='/docs')
     return response
 
-if __name__ == "__odds__":
+@app.get("/github_commits",include_in_schema=True)
+async def github_commits():
+    return "Latest Github Commit when Pushed"
+
+@app.get("/youtube_releases",include_in_schema=True)
+async def youtube_releases():
+    return "Latest YouTube Video when Released"
+
+if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8885)
