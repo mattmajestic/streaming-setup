@@ -1,4 +1,6 @@
 # bot.py
+import time
+import asyncio
 import discord
 from discord.ext import commands
 from services.github_service import get_latest_github_commit
@@ -29,4 +31,13 @@ async def github(ctx):
         await ctx.send(f"Failed to fetch the latest commit: {e}")
 
 async def start_discord_bot(discord_bot_key):
-    await bot.start(discord_bot_key)
+    await asyncio.sleep(5)  # Adding a delay before starting the bot
+    try:
+        await bot.start(discord_bot_key)
+    except discord.errors.HTTPException as e:
+        if e.status == 429:  # Check for rate limit error
+            print("Rate limit hit, retrying after a delay...")
+            await asyncio.sleep(60)  # Wait for a minute before retrying
+            await start_discord_bot(discord_bot_key)
+        else:
+            raise e
