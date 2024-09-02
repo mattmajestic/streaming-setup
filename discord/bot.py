@@ -3,7 +3,8 @@ import time
 import asyncio
 import discord
 from discord.ext import commands
-from services.github_service import get_latest_github_commit
+from services.github_service import latest_github_commit
+from services.youtube_service import latest_youtube_release
 
 # Initialize Discord bot
 intents = discord.Intents.default()
@@ -17,7 +18,7 @@ async def welcome(ctx):
 @bot.command(name='github')
 async def github(ctx):
     try:
-        commit = get_latest_github_commit()
+        commit = latest_github_commit()
         message = (
             f"Repository: {commit.repo}\n"
             f"Message: {commit.message}\n"
@@ -29,6 +30,19 @@ async def github(ctx):
         await ctx.send(message)
     except Exception as e:
         await ctx.send(f"Failed to fetch the latest commit: {e}")
+        
+@bot.command(name='youtube')
+async def youtube(ctx):
+    try:
+        release = latest_youtube_release()
+        message = (
+            f"Latest YouTube Video:\n"
+            f"Title: {release.title}\n"
+            f"URL: {release.url}"
+        )
+        await ctx.send(message)
+    except Exception as e:
+        await ctx.send(f"Failed to fetch the latest YouTube video: {e}")
 
 async def start_discord_bot(discord_bot_key):
     await asyncio.sleep(5)  # Adding a delay before starting the bot

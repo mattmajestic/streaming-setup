@@ -5,7 +5,7 @@ import requests
 from fastapi import HTTPException
 from models import GitHubCommit
 
-def get_latest_github_commit():
+def latest_github_commit():
     github_token = os.environ.get("GITHUB_TOKEN")
     
     if not github_token:
