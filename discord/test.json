@@ -1,0 +1,16 @@
+{
+    "test_url": "https://discord-bot-majestic-coding.onrender.com",
+    "routes": [
+      {
+        "route": "/latest_youtube_release",
+        "model": "YouTubeRelease",
+        "name": "YouTube Release"
+      },
+      {
+        "route": "/latest_github_commit",
+        "model": "GitHubCommit",
+        "name": "GitHub Commit"
+      }
+    ]
+  }
+  
