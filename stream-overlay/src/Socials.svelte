@@ -1,40 +1,38 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { fade } from 'svelte/transition';
 
-  // Define the social media data with SVG paths, usernames, and colors
   const socialPlatforms = [
     {
       name: 'YouTube',
       username: 'MajesticCoding',
-      color: '#FF0000', // YouTube red
+      color: '#FF0000',
       logoSrc: '/youtube-color.svg'
     },
     {
       name: 'GitHub',
       username: 'mattmajestic',
-      color: '#4A4A4A', // Light grey for GitHub
+      color: '#4A4A4A',
       logoSrc: '/github-color.svg'
     },
     {
       name: 'Twitch',
       username: 'MajesticCodingTwitch',
-      color: '#6441a4', // Twitch purple
+      color: '#6441a4',
       logoSrc: '/twitch-color.svg'
     }
   ];
 
-  // Reactive variables for the current social platform
   let currentPlatformIndex = 0;
   let socialPlatform = socialPlatforms[currentPlatformIndex];
 
-  // Function to rotate social platforms every 15 seconds
   onMount(() => {
     const interval = setInterval(() => {
       currentPlatformIndex = (currentPlatformIndex + 1) % socialPlatforms.length;
       socialPlatform = socialPlatforms[currentPlatformIndex];
-    }, 15000); // 15-second interval
+    }, 15000);
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval);
   });
 </script>
 
@@ -46,17 +44,17 @@
     left: 20px;
     display: flex;
     align-items: center;
-    padding: 8px 12px;
+    padding: 8px 16px;
     color: white;
     font-size: 1.5rem;
     border-radius: 8px;
     background-color: var(--social-color, #333);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border: 2px solid rgba(255, 255, 255, 0.1);
     transition: background-color 0.5s ease;
+    /* Remove any unnecessary container background */
+    overflow: hidden;
   }
 
-  /* Dynamic background color for socials */
   #socials[data-platform="YouTube"] {
     --social-color: #FF0000;
   }
@@ -69,13 +67,16 @@
 
   /* Logo styling */
   .social-logo {
-    width: 12%; /* Reduced logo size */
+    width: 24px;
     height: auto;
-    margin-right: 8px;
+    margin-right: 10px;
   }
 </style>
 
-<div id="socials" data-platform={socialPlatform.name}>
-  <img src={socialPlatform.logoSrc} alt="{socialPlatform.name} Logo" class="social-logo" />
-  @{socialPlatform.username}
-</div>
+<!-- Apply the fade transition to the whole component -->
+{#if socialPlatform}
+  <div id="socials" data-platform={socialPlatform.name} in:fade={{ duration: 500 }}>
+    <img src={socialPlatform.logoSrc} alt="{socialPlatform.name} Logo" class="social-logo" />
+    @{socialPlatform.username}
+  </div>
+{/if}

@@ -1,7 +1,7 @@
 <style>
   /* Main code screen styling */
   #codeScreen {
-    background: #1e1e1e;
+    background: #000;
     padding: 10px;
     border-radius: 6px;
     font-size: 4.0rem;

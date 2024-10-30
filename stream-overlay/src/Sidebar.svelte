@@ -56,11 +56,10 @@
     align-items: center;
     padding: 8px 12px;
     color: white;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     border-radius: 8px;
     background-color: var(--social-color, #333);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border: 2px solid rgba(255, 255, 255, 0.1); /* Subtle border */
     transition: background-color 0.5s ease;
   }
 
@@ -77,29 +76,27 @@
 
   /* Camera section styling */
   #camera {
-    background: #2e2e2e; /* Dark grey background */
-    border: 2px solid rgba(0, 255, 255, 0.3); /* Aqua hint border */
+    background: #000000; /* Black background */
     border-radius: 8px;
     height: 30vh;
     overflow: hidden;
-    font-size: 1.5rem;
+    font-size: 2.0rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     padding: 10px;
     display: flex;
     color: white;
+    flex: 1;
   }
 
   /* Chat section */
   #chat {
-    background: #333;
-    border: 2px solid rgba(0, 255, 255, 0.3); /* Aqua hint border */
+    background: #000000; /* Black background */
     border-radius: 8px;
     padding: 10px;
     font-size: 2.0rem;
     overflow-y: auto;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     flex: 1;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
 
   /* Logo styling - smaller size */
@@ -116,8 +113,6 @@
     <img src={socialPlatform.logoSrc} alt="{socialPlatform.name} Logo" class="social-logo" />
     @{socialPlatform.username}
   </div>
-  
-  
 
   <!-- Chat section above camera -->
   <div id="chat">
@@ -126,6 +121,6 @@
 
   <!-- Camera section with colored border -->
   <div id="camera">
-    📷 Camera
+    📷 Cam
   </div>
 </div>
