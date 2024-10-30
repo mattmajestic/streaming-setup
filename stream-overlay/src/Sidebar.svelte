@@ -105,6 +105,34 @@
     height: auto;
     margin-right: 8px;
   }
+
+  /* Style for icon text alignment */
+  .icon-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+  }
+
+  /* Keyframes for bouncing animation */
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+
+  /* Apply bounce animation to icons */
+  .icon {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    animation: bounce 5s infinite;
+  }
 </style>
 
 <div id="sidebar">
@@ -114,13 +142,16 @@
     @{socialPlatform.username}
   </div>
 
-  <!-- Chat section above camera -->
-  <div id="chat">
-    💬 Chat
+  <!-- Chat section with icon and text on separate lines -->
+  <div id="chat" class="icon-text">
+    <span class="icon">💬</span>
+    <span>Chat</span>
   </div>
 
-  <!-- Camera section with colored border -->
-  <div id="camera">
-    📷 Cam
+  <!-- Camera section with icon and text on separate lines -->
+  <div id="camera" class="icon-text">
+    <span class="icon">📷</span>
+    <span>Code</span>
+    <span>Cam</span>
   </div>
 </div>
