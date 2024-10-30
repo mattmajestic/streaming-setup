@@ -4,6 +4,7 @@
     background: #1e1e1e;
     padding: 10px;
     border-radius: 6px;
+    font-size: 4.0rem;
     overflow: hidden;
     height: 100%; /* Fill height */
     display: flex;
@@ -14,5 +15,5 @@
 </style>
 
 <div id="codeScreen">
-  Code Screen Content
+  📷 Code Content
 </div>

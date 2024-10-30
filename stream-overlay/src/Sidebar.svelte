@@ -56,7 +56,7 @@
     align-items: center;
     padding: 8px 12px;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     border-radius: 8px;
     background-color: var(--social-color, #333);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -82,20 +82,22 @@
     border-radius: 8px;
     height: 30vh;
     overflow: hidden;
+    font-size: 1.5rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     padding: 10px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     color: white;
   }
 
   /* Chat section */
   #chat {
     background: #333;
+    border: 2px solid rgba(0, 255, 255, 0.3); /* Aqua hint border */
     border-radius: 8px;
     padding: 10px;
+    font-size: 2.0rem;
     overflow-y: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     flex: 1;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
@@ -119,11 +121,11 @@
 
   <!-- Chat section above camera -->
   <div id="chat">
-    Chat
+    💬 Chat
   </div>
 
   <!-- Camera section with colored border -->
   <div id="camera">
-    Camera
+    📷 Camera
   </div>
 </div>
