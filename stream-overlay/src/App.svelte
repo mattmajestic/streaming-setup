@@ -57,6 +57,7 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 1; /* Make sure it’s on top of the overlay */
+    padding: 8px 12px;
   }
 
   /* Keyframes for animated gradient glow */
