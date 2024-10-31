@@ -61,8 +61,8 @@
     background-color: var(--social-color, #333);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: background-color 0.5s ease;
-    height: 45px;
-    width: 420px
+    height: 40px;
+    width: 450px
   }
 
   /* Dynamic background color for socials */

@@ -31,7 +31,7 @@
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
     border: 2px solid rgba(255, 255, 255, 0.15); /* Subtle border */
     transition: background-color 0.5s ease, opacity 0.5s ease;
-    height: 40px; /* Set to half height as per request */
+    height: 33px; /* Set to half height as per request */
     width: fit-content;
     text-align: center;
   }
